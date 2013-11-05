@@ -1,8 +1,12 @@
 class Timer
-	def self.time_code(n=1)
-		start_time = Time.now
-		n.times{yield}
-		end_time = Time.now
-		(end_time - start_time) / n.to_f
-	end
+
+  def self.time_code n=1
+    # start the timer
+    start_time = Time.now
+    # run the code
+    n.times { yield }
+    # return the difference
+    (Time.now - start_time) / n
+  end
+
 end
