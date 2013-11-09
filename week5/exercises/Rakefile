@@ -1,0 +1,25 @@
+task :default => [:read_names]
+
+desc "reads all the lines in the names file and outputs them"
+task :read_names do
+  File.readlines('names', "\n").each { |l| print l }
+end
+
+desc "Creates a class directory"
+task :create_class do
+  dir_name = 'class'
+  Dir.mkdir(dir_name) unless Dir.exists? dir_name
+end
+
+desc "Creates a directory in the class directory for each name in names"
+task :create_names => [:create_class] do
+  File.readlines('names', "\n").each { |l| Dir.mkdir( Dir.pwd + "/class/" + l.chomp ) }
+end
+
+desc "Clears out all the dirs we created"
+task :clear_dirs do
+  # remove all directories in the class directory
+  Dir.entries("class").each do |dir|
+    p dir
+  end
+end
