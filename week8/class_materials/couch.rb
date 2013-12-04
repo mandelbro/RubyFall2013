@@ -5,12 +5,36 @@ class Couch
 		@dogs = dogs
 	end
 
+<<<<<<< HEAD
+	[:pillows, :cushions, :dogs].each do |var|
+		define_method("how_many_#{var}") do
+			puts "1" + self.to_s
+			instance_variable_get("@#{var}").size
+		end
+	end
+
+	puts "2" + self.to_s
+
+	def test
+		puts self
+		yield
+	end
+
+	def self.test2
+		puts self
+		yield
+	end
+
+end
+
+=======
 	[:pillows, :cushions, :dogs].each do |s|
 		define_method("how_many_#{s}") do
 			instance_variable_get("@#{s}").count
 		end
 	end
 
+>>>>>>> master
 	# def to_str
 	# 	"I am a Couch"
 	# end
@@ -32,4 +56,8 @@ class Couch
 	# end
 
 
+<<<<<<< HEAD
+#end
+=======
 end
+>>>>>>> master

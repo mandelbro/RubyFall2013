@@ -32,6 +32,13 @@ end
 
 class Renee < Person
 	def call_chain
+<<<<<<< HEAD
+		puts self.class
+		self.instance_eval do
+			puts self
+		end
+=======
+>>>>>>> master
 		"#{self}.#{super}"
 	end
 end
