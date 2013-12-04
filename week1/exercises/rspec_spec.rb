@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 describe "The Rspec ruby gem" do
-  
+
   context "Domain Specific Language" do
 
     it "creates examples with the #it keyword" do
@@ -67,7 +67,7 @@ describe "The Rspec ruby gem" do
     end
 
     it "should check how to spell my name" do
-	    "Renée".should include("ée") 
+	    "Renée".should include("ée")
     end
 
   end
@@ -77,15 +77,23 @@ describe "The Rspec ruby gem" do
   		# Fix the Failing Test
   		# Order of Operations is Please Excuse My Dear Aunt Sally:
   		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
-  		(1+2-5*6/2).should eq -13
+  		(1+2-5*6/2).should eq -12
   	end
   	it "should count the characters in your name" do
-      pending
+      "Chris".should have(5).characters
     end
-  	
-  	it "should check basic math"
 
-  	it "should check basic spelling"
+  	it "should check basic math" do
+      (52+37).should eq 89
+    end
+
+  	it "should check basic spelling" do
+
+      "Stupendous".should include("pendous")
+
+      "Stupendous".should_not include("apple")
+
+    end
 
   end
 
